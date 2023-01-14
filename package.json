@@ -1,0 +1,29 @@
+{
+  "name": "wrapping-letters",
+  "version": "1.0.0",
+  "description": "Wrapping Letters JS engine, this code is the core of Wrapping Letters in JS",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srtager555/wrapping-letters.git"
+  },
+  "keywords": [
+    "engine",
+    "wrappingletter",
+    "javascript",
+    "letters",
+    "wrapping",
+    "wrapping-letters",
+    "UX",
+    "UI"
+  ],
+  "author": "Carlos Ponce",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/srtager555/wrapping-letters/issues"
+  },
+  "homepage": "https://wrapping-letters.vercel.app/docs"
+}
