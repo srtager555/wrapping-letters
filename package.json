@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/srtager555/wrapping-letters.git"
@@ -25,5 +26,14 @@
   "bugs": {
     "url": "https://github.com/srtager555/wrapping-letters/issues"
   },
-  "homepage": "https://wrapping-letters.vercel.app/docs"
+  "homepage": "https://wrapping-letters.vercel.app/docs",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.31.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
+  }
 }
