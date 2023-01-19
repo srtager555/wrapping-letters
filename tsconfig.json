@@ -4,6 +4,7 @@
     "baseUrl": "src/",
     "paths": {
       "@errors/*": ["errors/*"]
-    }
+    },
+    "target": "ES2022"
   }
 }
