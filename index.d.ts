@@ -16,8 +16,19 @@ interface WLProps {
     };
     SpecialWrapp?: {
       wordToSearch: SeekerWordType;
-      structuretToAdd: HTMLElement;
+      structuretToAdd: HTMLElement | HTMLElement[];
     };
     PerWord?: boolean;
   };
+  memo?: boolean;
+}
+
+interface SeekersBaseInterface {
+  name: string;
+  SpecialArray?: {
+    targets?: SeekerWordType;
+    elementsToGive?: HTMLElement | HTMLElement[] | string | string[];
+    process?: () => unknown;
+  };
+  Props?: boolean;
 }
