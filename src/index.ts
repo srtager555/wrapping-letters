@@ -31,7 +31,8 @@
 // &@#######%@@&&&@#*/@@@@@@@@@@@@@@@@@@@@@@(     /@@&&&&@%#####&&(*,,,,,,,,,,,,,,,
 // &&&@@@%####%@@& /@*       .  (@(***,%@,      .#  (@&&@&&@@@%##@@%#((((((((((((((
 
-import { __values_identifier__ } from "./errors/valuesIdentifier.error";
+import { __error__text_ } from "@errors/text.error";
+import { __values_identifier__ } from "@errors/valuesIdentifier.error";
 
 export function wrapping_letter(props: WLProps): WrappingLetters {
   // checking errors in the props
@@ -41,6 +42,8 @@ export function wrapping_letter(props: WLProps): WrappingLetters {
   });
 
   const { text = "¡Hola Mundo! )w)", textOptions = {} } = props;
+
+  __error__text_(text);
 
   return {
     text: "Hola",
