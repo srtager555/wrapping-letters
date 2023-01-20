@@ -1,4 +1,27 @@
-type SeekerWordType = Array<string | string[]>;
+type SeekerWordType = Array<string | string[]> | string;
+
+type SpecialWrappElementsToGive = HTMLElement | HTMLElement[];
+
+type SelectClassElementsToGive = string | string[];
+
+interface SpecialWrappProcessReturn {
+  hasCustomWrapp: boolean;
+  hasCustomProps: boolean;
+  wordToWrapp: SeekerWordType;
+  wrappToAdd: HTMLElement;
+  spaceBetweenWord: boolean;
+}
+interface SpecialWrappProcessProps {
+  wordToSearch: SeekerWordType;
+  structureToAdd: SpecialWrappElementsToGive;
+  spaceBetweenWord: boolean;
+}
+
+interface SelectClassProcessReturn {
+  searchWordValue: SeekerWordType;
+  specialClass: string | string[];
+  spaceBetweenWord: boolean;
+}
 
 interface WrappingLetters {
   text: string;
@@ -12,11 +35,11 @@ interface WLProps {
     ClassToAdd?: string;
     SelecClass?: {
       wordToSearch: SeekerWordType;
-      classToAdd: string | string[];
+      classToAdd: SelectClassElementsToGive;
     };
     SpecialWrapp?: {
       wordToSearch: SeekerWordType;
-      structuretToAdd: HTMLElement | HTMLElement[];
+      structuretToAdd: SpecialWrappElementsToGive;
     };
     PerWord?: boolean;
   };
@@ -27,8 +50,9 @@ interface SeekersBaseInterface {
   name: string;
   SpecialArray?: {
     targets?: SeekerWordType;
-    elementsToGive?: HTMLElement | HTMLElement[] | string | string[];
+    elementsToGive?: SpecialWrappElementsToGive | SelectClassElementsToGive;
     process?: () => unknown;
   };
-  Props?: boolean;
+  __error: VoidFunction;
+  __process: () => SpecialWrappProcessReturn | SelectClassProcessReturn;
 }
