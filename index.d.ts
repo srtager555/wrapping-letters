@@ -4,6 +4,15 @@ type SpecialWrappElementsToGive = HTMLElement | HTMLElement[];
 
 type SelectClassElementsToGive = string | string[];
 
+type process = (
+  props: SelectClassProcessProps | SpecialWrappProcessProps
+) => SpecialWrappProcessReturn | SelectClassProcessReturn;
+
+type SelectClass = {
+  wordToSearch: SeekerWordType;
+  classToAdd: SelectClassElementsToGive;
+};
+
 interface SpecialWrappProcessReturn {
   hasCustomWrapp: boolean;
   hasCustomProps: boolean;
@@ -23,6 +32,12 @@ interface SelectClassProcessReturn {
   spaceBetweenWord: boolean;
 }
 
+interface SelectClassProcessProps {
+  SelectClass: SelectClass;
+  crumbledText: string[];
+  PerWord: boolean;
+}
+
 interface WrappingLetters {
   text: string;
   classes: string;
@@ -33,10 +48,7 @@ interface WLProps {
   text?: string;
   textOptions?: {
     ClassToAdd?: string;
-    SelecClass?: {
-      wordToSearch: SeekerWordType;
-      classToAdd: SelectClassElementsToGive;
-    };
+    SelecClass?: SelectClass;
     SpecialWrapp?: {
       wordToSearch: SeekerWordType;
       structuretToAdd: SpecialWrappElementsToGive;
@@ -51,8 +63,8 @@ interface SeekersBaseInterface {
   SpecialArray?: {
     targets?: SeekerWordType;
     elementsToGive?: SpecialWrappElementsToGive | SelectClassElementsToGive;
-    process?: () => unknown;
+    process?: (props: unknown) => unknown;
   };
   __error: VoidFunction;
-  __process: () => SpecialWrappProcessReturn | SelectClassProcessReturn;
+  __process: process;
 }
