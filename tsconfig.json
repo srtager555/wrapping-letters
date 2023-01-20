@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "src/",
     "paths": {
-      "@errors/*": ["errors/*"]
+      "@errors/*": ["errors/*"],
+      "@process/*": ["process/*"]
     },
     "target": "ES2022",
     "moduleResolution": "node"
