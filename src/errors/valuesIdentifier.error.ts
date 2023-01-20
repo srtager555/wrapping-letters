@@ -1,4 +1,4 @@
-import stringSimilarity from "string-similarity";
+import { findBestMatch } from "string-similarity";
 
 export function __values_identifier__({
   valuesToCheck,
@@ -13,7 +13,7 @@ export function __values_identifier__({
     const OFICIAL_PROP = correctValues.values.some((element) => element === el);
 
     if (!OFICIAL_PROP) {
-      const SS = stringSimilarity.findBestMatch(el, correctValues);
+      const SS = findBestMatch(el, correctValues.values);
 
       if (SS.bestMatch.rating > 0.5) {
         throw new Error(
