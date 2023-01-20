@@ -1,5 +1,5 @@
 export function Process__IndexMatchFinder_(
-  array: Array<string[] | string>,
+  array: Array<string[] | string> | string,
   word: string
 ) {
   return array
