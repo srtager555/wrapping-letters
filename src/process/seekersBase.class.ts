@@ -1,4 +1,7 @@
-import { __specialArray__, IterateOnAnArray } from "./specialArray.process";
+import {
+  Process__IndexMatchFinder_,
+  Process__SpecialArray_,
+} from "@process/specialArray.procces";
 
 export class SeekersBase {
   name: string;
@@ -33,8 +36,11 @@ export class SeekersBase {
       if (SA.targets === currentTarget) return;
     }
 
-    const TARGET_INDEX = IterateOnAnArray(SA.targets, currentTarget);
-    const TARGET_RESULT = __specialArray__(SA.elementsToGive, TARGET_INDEX);
+    const TARGET_INDEX = Process__IndexMatchFinder_(SA.targets, currentTarget);
+    const TARGET_RESULT = Process__SpecialArray_(
+      SA.elementsToGive,
+      TARGET_INDEX
+    );
 
     const processFun = SA.process && ((props: unknown) => SA.process(props));
 
