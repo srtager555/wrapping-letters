@@ -44,17 +44,19 @@ interface WrappingLetters {
   wrapping: unknown;
 }
 
+interface textOptions {
+  ClassToAdd?: string;
+  SelectClass?: SelectClass;
+  SpecialWrapp?: {
+    wordToSearch: SeekerWordType;
+    structuretToAdd: SpecialWrappElementsToGive;
+  };
+  PerWord?: boolean;
+}
+
 interface WLProps {
   text?: string;
-  textOptions?: {
-    ClassToAdd?: string;
-    SelecClass?: SelectClass;
-    SpecialWrapp?: {
-      wordToSearch: SeekerWordType;
-      structuretToAdd: SpecialWrappElementsToGive;
-    };
-    PerWord?: boolean;
-  };
+  textOptions?: textOptions;
   memo?: boolean;
 }
 
