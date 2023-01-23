@@ -8,9 +8,10 @@ type process = (
   props: SelectClassProcessProps | SpecialWrappProcessProps
 ) => SpecialWrappProcessReturn | SelectClassProcessReturn;
 
-type SelectClass = {
+type SelectClassType = {
   wordToSearch: SeekerWordType;
   classToAdd: SelectClassElementsToGive;
+  spaceBetweenWord?: boolean;
 };
 
 interface SpecialWrappProcessReturn {
@@ -33,7 +34,7 @@ interface SelectClassProcessReturn {
 }
 
 interface SelectClassProcessProps {
-  SelectClass: SelectClass;
+  SelectClass: SelectClassType;
   crumbledText: string[];
   PerWord: boolean;
 }
@@ -46,7 +47,7 @@ interface WrappingLetters {
 
 interface textOptions {
   ClassToAdd?: string;
-  SelectClass?: SelectClass;
+  SelectClass?: SelectClassType;
   SpecialWrapp?: {
     wordToSearch: SeekerWordType;
     structuretToAdd: SpecialWrappElementsToGive;
